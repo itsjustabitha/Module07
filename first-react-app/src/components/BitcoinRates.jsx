@@ -1,4 +1,4 @@
-import { useState } from 'react'; // new, I added this to use the useState hook to store the selected currency and the price of bitcoin in that currency
+import { useState, useEffect } from "react";// new, I added this to use the useState hook to store the selected currency and the price of bitcoin in that currency
 const currencies = ['USD', 'AUD', 'NZD', 'GBP', 'EUR', 'SGD'];
 
 function BitcoinRates() {
@@ -9,6 +9,17 @@ function BitcoinRates() {
     const options = currencies.map(curr => <option value={curr}
 key={curr}>{curr}</option>);
 
+useEffect(() => {
+  let ignore = false;
+  setPrice(null);
+  fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}`)
+    .then(response => response.json())
+    .then(data => {
+      if (!ignore) setPrice(data.bitcoin[currency.toLowerCase()]); // needed to add .toLowerCase() because the API returns the price in lowercase currency code
+    });
+  return () => { ignore = true; };
+}, [currency]);
+
     return (
         <div className="BitcoinRates componentBox">
             <h3>Bitcoin Exchange Rate</h3>
@@ -18,6 +29,7 @@ setCurrency(e.target.value)}>
                 {options}
             </select>
         </label>
+        <div><strong>Price: </strong>{price ? `${price.toLocaleString()} ${currency}` : "Loading..."}</div>
         </div>
     )
 }
