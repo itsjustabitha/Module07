@@ -27,15 +27,20 @@ import './App.css'
 // import ClockDisplay from './components/Clock'
 // import ActivityFinder from './components/ActivityFinder'
 // import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 01 Side 15
-import RefCounter from './components/RefCounter' 
-import VideoPlayer from './components/VideoPlayer'
-
+// import RefCounter from './components/RefCounter' 
+// import VideoPlayer from './components/VideoPlayer'
+// import ReducerCounter from './components/ReducerCounter'
+// import PostListReducer from './components/PostListReducer'
+// import SubscribeForm from './components/SubscribeForm' 
+// import ActivityFinders from './components/ActivityFinders'
+ import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 02 Side 34
 
 function App() {
   return (
     <>
-<RefCounter />
-<VideoPlayer />
+
+ <BitcoinRates/>
+
 
     </>
   )
@@ -133,6 +138,12 @@ export default App
 // ============================= PREVIOUS EXAMPLES - I COMMENTED THEM OUT SO I DON'T GET CONFUSED. ============================
 
 {/* 
+  <ActivityFinders />
+<SubscribeForm />
+  <ReducerCounter />
+<PostListReducer />
+  <RefCounter />
+<VideoPlayer />
    <ActivityFinder/>
     <ClockDisplay/>
   <ExplodingBomb/>
