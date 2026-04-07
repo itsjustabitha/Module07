@@ -2,7 +2,7 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from './assets/vite.svg'
 // import heroImg from './assets/hero.png'
-import './App.css'
+import "./App.css";
 // import PropsDisplayer from './components/PropsDisplayer' // up the top
 // import City from './components/City'
 // import Pet from './components/Pet'
@@ -11,44 +11,50 @@ import './App.css'
 // import ComplexComment from './components/ComplexComment'
 // import Comment from './components/Comment'
 // import Callout from './components/Callout'
-// import MoviesList from './components/MoviesList'
+import MoviesList from "./components/MoviesList";
 // import BigCats from './components/BigCats' // Module 06 Exercise 02 Slide 47 & Module 06 Exercise 03 Slide 72
 // import ErrorMessage from './components/ErrorMessage'
-// import SingleCat from './components/SingleCat' // Module 06 Exercise 02 Slide 47 
+// import SingleCat from './components/SingleCat' // Module 06 Exercise 02 Slide 47
 // import MoodChanger from './components/MoodChanger'
 // import EmojiChanger from './components/Emoji' //  Module 06 Exercise 03 Slide 58
-// import BirthdayTranslator from './components/BirthdayTranslator' 
+// import BirthdayTranslator from './components/BirthdayTranslator'
 // import Weather from './components/Weather'
-// import LoginForm from './components/LoginForm' 
+import LoginForm from "./components/LoginForm";
 // import { ErrorBoundary } from 'react-error-boundary'
 // import ExplodingBomb from './components/ExplodingBomb'
 // import Calculator from './components/Calculator' //  Module 06 Exercise 06 Slide 80
-//import Clock from './components/Clock' 
-// import ClockDisplay from './components/Clock'
-// import ActivityFinder from './components/ActivityFinder'
+// import Clock from './components/Clock'
+import ClockDisplay from "./components/Clock";
+import ActivityFinder from "./components/ActivityFinder";
 // import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 01 Side 15
-// import RefCounter from './components/RefCounter' 
+// import RefCounter from './components/RefCounter'
 // import VideoPlayer from './components/VideoPlayer'
 // import ReducerCounter from './components/ReducerCounter'
-// import PostListReducer from './components/PostListReducer'
-// import SubscribeForm from './components/SubscribeForm' 
+import PostListReducer from "./components/PostListReducer";
+// import SubscribeForm from './components/SubscribeForm'
 // import ActivityFinders from './components/ActivityFinders'
- import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 02 Side 34
+// import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 02 Side 34 -  see my useData.jsx and BitcoinRates.jsx files
+import { UserProvider } from "./context/UserContext";
+import { MyThemeContext } from "./context/MyThemeContext.jsx";
 
 function App() {
   return (
     <>
-
- <BitcoinRates/>
-
-
+      <UserProvider>
+        <MyThemeProvider>
+          <ClockDisplay /> {/* so all children can use context data */}
+          <MoviesList /> {/* even if they have children of their own */}
+          <ActivityFinder />
+          <PostListReducer />
+          {/* logging in here can now set up current user everywhere */}
+          <LoginForm />
+        </MyThemeProvider>
+      </UserProvider>
     </>
-  )
+  );
 }
 
-export default App
-
-
+export default App;
 
 //  ============================= Module 07 Exercise 01 Side 15 =============================
 // import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 01 Side 15
@@ -65,6 +71,21 @@ export default App
 // export default App
 
 //  ============================= Module 07 Exercise 01 Side 34 =============================
+// Please see my useData.jsx and BitcoinRates.jsx files to see assignment. It's commented out to not affect the rest of the module.
+//  import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 02 Side 34
+
+// function App() {
+//   return (
+//     <>
+
+//  <BitcoinRates/>
+
+//     </>
+//   )
+// }
+
+// export default App
+
 //  ============================= Module 07 Exercise 01 Side 45 =============================
 //  ============================= Module 07 Exercise 01 Side 59 =============================
 //  ============================= Module 07 Exercise 01 Side 100 =============================
@@ -84,7 +105,6 @@ export default App
 
 // export default App
 
-
 // ============================= Module 06 Exercise 02 Side 47 =============================
 // import BigCats from './components/BigCats' // Module 06 Exercise 02 Slide 47
 // import SingleCat from './components/SingleCat' // Module 06 Exercise 02 Slide 47
@@ -93,17 +113,16 @@ export default App
 //   return (
 //     <>
 // <BigCats />
-// <SingleCat 
-//     name="Cheetah" 
-//     latinName="Acinonyx jubatus" 
-//     imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYp5JeE-1jd8lFU92CwrFaclY7NrtfTpaJqI53WMfVnRzvaZySlrxpLPvyiWEMrqSs9O_NkqURthHKg1SZjUHFMWCmeKhwu1dgcOXVw&s=10" 
+// <SingleCat
+//     name="Cheetah"
+//     latinName="Acinonyx jubatus"
+//     imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYp5JeE-1jd8lFU92CwrFaclY7NrtfTpaJqI53WMfVnRzvaZySlrxpLPvyiWEMrqSs9O_NkqURthHKg1SZjUHFMWCmeKhwu1dgcOXVw&s=10"
 //  />
 //     </>
 //   )
 // }
 
 // export default App
-
 
 // ============================= Module 06 Exercise 03 Slide 58 =============================
 // import EmojiChanger from './components/Emoji' //  Module 06 Exercise 03 Slide 58
@@ -118,11 +137,9 @@ export default App
 
 // export default App
 
-
-
 // ============================= BigCats.jsx - Module 06 Exercise 03 Slide 72 =============================
 // import BigCats from './components/BigCats' // Module 06 Exercise 02 Slide 47
- 
+
 // function App() {
 //   return (
 //     <>
@@ -132,12 +149,11 @@ export default App
 // }
 
 // export default App
- 
-
 
 // ============================= PREVIOUS EXAMPLES - I COMMENTED THEM OUT SO I DON'T GET CONFUSED. ============================
 
-{/* 
+{
+  /* 
   <ActivityFinders />
 <SubscribeForm />
   <ReducerCounter />
@@ -151,8 +167,8 @@ export default App
 <MoviesList/>
 <BirthdayTranslator/>
 <Weather/> 
- <MoodChanger/> */}
-
+ <MoodChanger/> */
+}
 
 // <MoviesList />
 // object storing comment data - passed as props
@@ -170,7 +186,6 @@ export default App
 // <FullName first="Elon" last="Musk" />
 // </Callout>
 
-
 //       <ComplexComment author={comment.author}
 //         date={comment.date}
 //         text={comment.text}/>
@@ -178,8 +193,6 @@ export default App
 //         <Comment author={comment.author}
 //         date={comment.date}
 //         text={comment.text}/>
-
-
 
 // const [count, setCount] = useState(0)
 
@@ -226,7 +239,6 @@ export default App
 // )
 // }
 
-
 // Add this in App.jsx ABOVE the App component
 // function ExampleComponent() {
 // return (
@@ -238,14 +250,11 @@ export default App
 // )
 // }
 
-
 //  const spiderman = { name: 'Spiderman', alterEgo: 'Peter Parker', catchPhrase: 'With great power comes great responsibility' };
 //   const spideyJSX = (<div>
 // <h3>{spiderman.name}</h3>
 // <blockquote>{spiderman.catchPhrase}</blockquote><cite>{spiderman.alterEgo}</cite>
 // </div>);
-
-
 
 // single parent <div> element
 // const spideyJSX = (<div>
@@ -265,37 +274,34 @@ export default App
 
 // const divStyle = { background: 'lightblue', padding: '1em', fontWeight: 'bold' };
 
-//   Renders the component with no props 
-//  <PropsDisplayer /> 
+//   Renders the component with no props
+//  <PropsDisplayer />
 
-//  Renders the component with a single prop 'myProp' 
-//  <PropsDisplayer myProp="first prop"/> 
+//  Renders the component with a single prop 'myProp'
+//  <PropsDisplayer myProp="first prop"/>
 
-//  Renders the component with multiple props - add your own! 
-//  <PropsDisplayer prop1="first" prop2="second" prop3={3}/> 
+//  Renders the component with multiple props - add your own!
+//  <PropsDisplayer prop1="first" prop2="second" prop3={3}/>
 
-//  String prop value uses quotes, numeric prop value uses curly braces 
-//  <PropsDisplayer name="Harry Styles" age={29}/> 
+//  String prop value uses quotes, numeric prop value uses curly braces
+//  <PropsDisplayer name="Harry Styles" age={29}/>
 
-//  Array prop value - uses curly braces 
-//  <PropsDisplayer pets={["cat", "dog", "goldfish"]}/> 
+//  Array prop value - uses curly braces
+//  <PropsDisplayer pets={["cat", "dog", "goldfish"]}/>
 
-//  Variable prop values - uses curly braces 
-//  <PropsDisplayer reactLogo={reactLogo} buttonCount={count}/> 
-
-
+//  Variable prop values - uses curly braces
+//  <PropsDisplayer reactLogo={reactLogo} buttonCount={count}/>
 
 //   <Welcome name="students">
 // <p>Children of Welcome</p>
 // </Welcome>
 //     <ExampleComponent/>
 
-// <div style={divStyle}>This is a styled div.</div> style object as a variable - neater and re-usable 
+// <div style={divStyle}>This is a styled div.</div> style object as a variable - neater and re-usable
 
 //  {spideyJSX}
 //   {spideyJSXFragment}
 
-  
 //       <section id="center">
 //         <div className="hero">
 //           <img src={heroImg} className="base" width="170" height="179" alt="" />
