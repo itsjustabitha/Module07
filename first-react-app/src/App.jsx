@@ -26,14 +26,16 @@ import './App.css'
 //import Clock from './components/Clock' 
 // import ClockDisplay from './components/Clock'
 // import ActivityFinder from './components/ActivityFinder'
-import BitcoinRates from './components/BitcoinRates'
-
+// import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 01 Side 15
+import RefCounter from './components/RefCounter' 
+import VideoPlayer from './components/VideoPlayer'
 
 
 function App() {
   return (
     <>
- <BitcoinRates/>
+<RefCounter />
+<VideoPlayer />
 
     </>
   )
@@ -44,6 +46,19 @@ export default App
 
 
 //  ============================= Module 07 Exercise 01 Side 15 =============================
+// import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 01 Side 15
+
+// function App() {
+//   return (
+//     <>
+//  <BitcoinRates/>
+
+//     </>
+//   )
+// }
+
+// export default App
+
 //  ============================= Module 07 Exercise 01 Side 34 =============================
 //  ============================= Module 07 Exercise 01 Side 45 =============================
 //  ============================= Module 07 Exercise 01 Side 59 =============================
