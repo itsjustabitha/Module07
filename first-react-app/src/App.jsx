@@ -35,7 +35,8 @@ import PostListReducer from "./components/PostListReducer";
 // import ActivityFinders from './components/ActivityFinders'
 // import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 02 Side 34 -  see my useData.jsx and BitcoinRates.jsx files
 import { UserProvider } from "./context/UserContext";
-import { MyThemeContext } from "./context/MyThemeContext.jsx";
+// import {MyThemeContext } from "./context/MyThemeContext";
+import MyThemeProvider from "./context/MyThemeContext";
 
 function App() {
   return (
