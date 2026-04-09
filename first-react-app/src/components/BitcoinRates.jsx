@@ -2,29 +2,38 @@
 
 import { useState } from "react";
 import { useData } from "../hooks/useData";
+import { useEmojiContext } from "../context/EmojiContext"; 
+import { moods } from "./Emoji"; 
 
 const currencies = ['USD', 'AUD', 'NZD', 'GBP', 'EUR', 'SGD'];
 
 function BitcoinRates() {
     const [currency, setCurrency] = useState(currencies[0]);
+    const { mood } = useEmojiContext();
 
-    const { data, loading } = useData(
+  const data = useData(
         `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}`
     );
 
     const price = data ? data.bitcoin[currency.toLowerCase()] : null;
 
+    // old code from mod6 
     const options = currencies.map(curr => <option value={curr} key={curr}>{curr}</option>);
 
     return (
         <div className="BitcoinRates componentBox">
+            <img 
+                src={moods[mood].emoji} 
+                alt={moods[mood].label} 
+                style={{ width: '50px' }} 
+            />
             <h3>Bitcoin Exchange Rate</h3>
             <label>Choose currency:
                 <select value={currency} onChange={e => setCurrency(e.target.value)}>
                     {options}
                 </select>
             </label>
-            <div><strong>Price: </strong>{loading ? "Loading..." : `${price.toLocaleString()} ${currency}`}</div>
+            <div><strong>Price: </strong>{data ? `${data.bitcoin[currency.toLowerCase()].toLocaleString()} ${currency}` : "Loading..."}</div>
         </div>
     )
 }

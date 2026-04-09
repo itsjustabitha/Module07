@@ -37,18 +37,30 @@ import PostListReducer from "./components/PostListReducer";
 import { UserProvider } from "./context/UserContext";
 // import {MyThemeContext } from "./context/MyThemeContext";
 import MyThemeProvider from "./context/MyThemeContext";
+import Emoji from "./components/Emoji"; // Module 07 Exercise 03 Side 45 - see my EmojiContext.jsx file for this Exercise.
+import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 02 Side 34 -  see my useData.jsx and BitcoinRates.jsx files
+import { EmojiProvider } from "./context/EmojiContext"; // Module 07 Exercise 03 Side 45 - see my EmojiContext.jsx file for this Exercise.
+
+
+
 
 function App() {
   return (
     <>
       <UserProvider>
         <MyThemeProvider>
-          <ClockDisplay /> {/* so all children can use context data */}
-          <MoviesList /> {/* even if they have children of their own */}
+          <EmojiProvider>
+          <Emoji />
+          <BitcoinRates />
+          </EmojiProvider>
+          {/* 
+          <EmojiChanger />
+          <BitcoinRates /> 
+          <ClockDisplay /> 
+          <MoviesList /> 
           <ActivityFinder />
           <PostListReducer />
-          {/* logging in here can now set up current user everywhere */}
-          <LoginForm />
+          <LoginForm /> */}
         </MyThemeProvider>
       </UserProvider>
     </>
@@ -71,7 +83,7 @@ export default App;
 
 // export default App
 
-//  ============================= Module 07 Exercise 01 Side 34 =============================
+//  ============================= Module 07 Exercise 02 Side 34 =============================
 // Please see my useData.jsx and BitcoinRates.jsx files to see assignment. It's commented out to not affect the rest of the module.
 //  import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 02 Side 34
 
@@ -87,7 +99,9 @@ export default App;
 
 // export default App
 
-//  ============================= Module 07 Exercise 01 Side 45 =============================
+//  ============================= Module 07 Exercise 03 Side 45 =============================
+// Please see my EmojiContext.jsx file for this Exercise. 
+
 //  ============================= Module 07 Exercise 01 Side 59 =============================
 //  ============================= Module 07 Exercise 01 Side 100 =============================
 
