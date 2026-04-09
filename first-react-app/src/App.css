@@ -196,3 +196,10 @@ background: linear-gradient(135deg, #1f005c, #5b0060, #870160,
 
 .FancyBox-blue { background: linear-gradient(135deg, #140061, #50006E,
 #64018C, #6955FF, #4684FF, #1FA7FF) fixed; }
+
+/* basic NavBar CSS, add to App.css and customize as needed */
+.NavBar ul { display: flex; list-style: none; justify-content:
+center; padding: 0; }
+.NavBar ul li a { padding: 1em; color: inherit; text-transform:
+uppercase; display: inline-block; text-decoration: none; }
+.NavBar ul li a.active { font-weight: bold;}

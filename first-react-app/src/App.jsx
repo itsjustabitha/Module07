@@ -11,7 +11,7 @@ import "./App.css";
 // import ComplexComment from './components/ComplexComment'
 // import Comment from './components/Comment'
 // import Callout from './components/Callout'
-import MoviesList from "./components/MoviesList";
+// import MoviesList from "./components/MoviesList";
 // import BigCats from './components/BigCats' // Module 06 Exercise 02 Slide 47 & Module 06 Exercise 03 Slide 72
 // import ErrorMessage from './components/ErrorMessage'
 // import SingleCat from './components/SingleCat' // Module 06 Exercise 02 Slide 47
@@ -19,28 +19,29 @@ import MoviesList from "./components/MoviesList";
 // import EmojiChanger from './components/Emoji' //  Module 06 Exercise 03 Slide 58
 // import BirthdayTranslator from './components/BirthdayTranslator'
 // import Weather from './components/Weather'
-import LoginForm from "./components/LoginForm";
+// import LoginForm from "./components/LoginForm";
 // import { ErrorBoundary } from 'react-error-boundary'
 // import ExplodingBomb from './components/ExplodingBomb'
 // import Calculator from './components/Calculator' //  Module 06 Exercise 06 Slide 80
 // import Clock from './components/Clock'
-import ClockDisplay from "./components/Clock";
-import ActivityFinder from "./components/ActivityFinder";
+// import ClockDisplay from "./components/Clock";
+// import ActivityFinder from "./components/ActivityFinder";
 // import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 01 Side 15
 // import RefCounter from './components/RefCounter'
 // import VideoPlayer from './components/VideoPlayer'
 // import ReducerCounter from './components/ReducerCounter'
-import PostListReducer from "./components/PostListReducer";
+// import PostListReducer from "./components/PostListReducer";
 // import SubscribeForm from './components/SubscribeForm'
 // import ActivityFinders from './components/ActivityFinders'
 // import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 02 Side 34 -  see my useData.jsx and BitcoinRates.jsx files
 import { UserProvider } from "./context/UserContext";
 // import {MyThemeContext } from "./context/MyThemeContext";
 import MyThemeProvider from "./context/MyThemeContext";
-import Emoji from "./components/Emoji"; // Module 07 Exercise 03 Side 45 - see my EmojiContext.jsx file for this Exercise.
-import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 02 Side 34 -  see my useData.jsx and BitcoinRates.jsx files
-import { EmojiProvider } from "./context/EmojiContext"; // Module 07 Exercise 03 Side 45 - see my EmojiContext.jsx file for this Exercise.
-
+// import Emoji from "./components/Emoji"; // Module 07 Exercise 03 Side 45 - see my EmojiContext.jsx file for this Exercise.
+// import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 02 Side 34 -  see my useData.jsx and BitcoinRates.jsx files
+// import { EmojiProvider } from "./context/EmojiContext"; // Module 07 Exercise 03 Side 45 - see my EmojiContext.jsx file for this Exercise.
+import AppRoutes from "./routes/AppRoutes";
+import Navbar from "./components/Navbar";
 
 
 
@@ -49,18 +50,8 @@ function App() {
     <>
       <UserProvider>
         <MyThemeProvider>
-          <EmojiProvider>
-          <Emoji />
-          <BitcoinRates />
-          </EmojiProvider>
-          {/* 
-          <EmojiChanger />
-          <BitcoinRates /> 
-          <ClockDisplay /> 
-          <MoviesList /> 
-          <ActivityFinder />
-          <PostListReducer />
-          <LoginForm /> */}
+          <Navbar/>
+          <AppRoutes />
         </MyThemeProvider>
       </UserProvider>
     </>
@@ -100,7 +91,32 @@ export default App;
 // export default App
 
 //  ============================= Module 07 Exercise 03 Side 45 =============================
-// Please see my EmojiContext.jsx file for this Exercise. 
+// Please see my EmojiContext.jsx,Emoji.jsx and BitcoinRates.jsx files for this Exercise.
+// import { UserProvider } from "./context/UserContext";
+// import {MyThemeContext } from "./context/MyThemeContext";
+// import MyThemeProvider from "./context/MyThemeContext";
+// import Emoji from "./components/Emoji"; // Module 07 Exercise 03 Side 45 - see my EmojiContext.jsx file for this Exercise.
+// import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 02 Side 34 -  see my useData.jsx and BitcoinRates.jsx files
+// import { EmojiProvider } from "./context/EmojiContext"; // Module 07 Exercise 03 Side 45 - see my EmojiContext.jsx file for this Exercise.
+
+
+// function App() {
+//   return (
+//     <>
+//       <UserProvider>
+//         <MyThemeProvider>
+//           <EmojiProvider>
+//           <Emoji />
+//           <BitcoinRates />
+//           </EmojiProvider>
+//         </MyThemeProvider>
+//       </UserProvider>
+//     </>
+//   );
+// }
+
+// export default App;
+
 
 //  ============================= Module 07 Exercise 01 Side 59 =============================
 //  ============================= Module 07 Exercise 01 Side 100 =============================
