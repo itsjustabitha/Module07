@@ -30,4 +30,8 @@ export const useUserContext = () => {
   return useContext(UserContext);
 };
 
+export function useUser() {
+  return useContext(UserContext);
+}
+
 // Save as UserContext.jsx in a separate 'context' folder

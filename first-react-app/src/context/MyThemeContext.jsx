@@ -1,28 +1,46 @@
-import React, { createContext, useState, useContext } from "react";
-// theme options with specific color values
+// ============================= Module 07 Exercise 01 Side 59 =============================
+// MyThemeContext.jsx — Theme context with light/dark mode support.
+
+import { createContext, useState, useContext } from "react";
+
+// Theme color definitions
 export const themes = {
   light: {
     foreground: "#333333",
-    background: "#BAE2FF",
+    background: "#cc6633",
   },
   dark: {
     foreground: "#ffffff",
     background: "#222222",
   },
 };
-// named export for this context (to be used via useContext elsewhere)
-export const MyThemeContext = React.createContext({ theme: themes.light });
-// provider wrapper. uses its own state to track which theme is in use
-// use it in App.jsx like <MyThemeProvider>...</MyThemeProvider>
-export default function MyThemeProvider(props) {
-  const [theme, setTheme] = React.useState(themes.light);
-  // helper boolean to tell if we’re currently in dark mode
+
+// Named export for the context (used directly via useContext elsewhere if needed)
+export const MyThemeContext = createContext({ theme: themes.light });
+
+// Provider wrapper — use in App.jsx like <MyThemeProvider>...</MyThemeProvider>
+export default function MyThemeProvider({ children }) {
+  const [theme, setTheme] = useState(themes.light);
+
+  // Helper boolean: true when dark theme is active
   const darkMode = theme.background === themes.dark.background;
+
+  // Toggles between light and dark theme
+  function toggleTheme() {
+    setTheme((prev) => (prev === themes.light ? themes.dark : themes.light));
+  }
+
   return (
-    <MyThemeContext.Provider value={{ theme, setTheme, darkMode }}>
-      {props.children}
+    <MyThemeContext.Provider value={{ theme, setTheme, darkMode, toggleTheme }}>
+      {children}
     </MyThemeContext.Provider>
   );
 }
+
+// Custom hook — this is what Login.jsx imports as { useTheme }
+export function useTheme() {
+  return useContext(MyThemeContext);
+}
+
 // ++ Try to use this context to style some existing components
 // ++ Try to add a component with a button/checkbox to switch themes

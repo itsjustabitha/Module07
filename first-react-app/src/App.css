@@ -185,7 +185,7 @@
 
 .componentBox { border: 1px solid #000000; margin: 1em;
 padding: 1em; text-align: center; background:
-#a63f3f; color:#000000; font-size: 1.5em; }
+#cc6633; color:#000000; font-size: 1.5em; }
 
 .FancyBox { --mask: linear-gradient(#000 0 0) 50%/calc(100% - 37.00px)
 calc(100% - 37.00px) no-repeat,
