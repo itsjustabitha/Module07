@@ -47,6 +47,7 @@ import { UserProvider } from "./context/UserContext";
 import MyThemeProvider from "./context/MyThemeContext";
 import Exercise4NavBar from "./components/Exercise4NavBar";
 import Exercise4Routes from "./routes/Exercise4Routes";
+import BitcoinRates from "./pages/BitcoinRates";
 
 
 
@@ -125,8 +126,36 @@ export default App;
 // export default App;
 
 
-//  ============================= Module 07 Exercise 01 Side 59 =============================
-//  ============================= Module 07 Exercise 01 Side 100 =============================
+//  ============================= Module 07 Exercise 04 Side 59 =============================
+// MyThemeContext.jsx, Exercise4NavBar.jsx, Exercise4Routes.jsx, Home.jsx, Login.jsx, and BitcoinRates.jsx are all related to this Exercise. 
+// Please see those files for the code for this Exercise. 
+// I have commented out the imports in App.jsx to not affect the rest of the module, but you can uncomment them to see the full code for this Exercise.
+
+// import "./App.css";
+// import { UserProvider } from "./context/UserContext";
+// import MyThemeProvider from "./context/MyThemeContext";
+// import Exercise4NavBar from "./components/Exercise4NavBar";
+// import Exercise4Routes from "./routes/Exercise4Routes";
+
+
+
+
+// function App() {
+//   return (
+//     <>
+//       <UserProvider>
+//         <MyThemeProvider>
+//           <Exercise4NavBar />
+//           <Exercise4Routes/>
+//           {/* <AppRoutes /> */}
+//         </MyThemeProvider>
+//       </UserProvider>
+//     </>
+//   );
+// }
+
+// export default App;
+//  ============================= Module 07 Exercise 05 Side 100 =============================
 
 //  ============================= ALL OF MODULE 06 IS BELOW =============================
 
