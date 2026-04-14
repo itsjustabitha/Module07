@@ -40,14 +40,15 @@
 // import Emoji from "./components/Emoji"; // Module 07 Exercise 03 Side 45 - see my EmojiContext.jsx file for this Exercise.
 // import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 02 Side 34 -  see my useData.jsx and BitcoinRates.jsx files
 // import { EmojiProvider } from "./context/EmojiContext"; // Module 07 Exercise 03 Side 45 - see my EmojiContext.jsx file for this Exercise.
-// import AppRoutes from "./routes/AppRoutes";
-// import Navbar from "./components/Navbar";
+import AppRoutes from "./routes/AppRoutes"; 
+import NavBar from "./components/NavBar";
 import "./App.css";
-import { UserProvider } from "./context/UserContext";
-import MyThemeProvider from "./context/MyThemeContext";
-import Exercise4NavBar from "./components/Exercise4NavBar";
-import Exercise4Routes from "./routes/Exercise4Routes";
-import BitcoinRates from "./pages/BitcoinRates";
+import { UserProvider } from "./context/UserContext"; // Module 07 Exercise 04 Side 59
+import MyThemeProvider from "./context/MyThemeContext"; // Module 07 Exercise 04 Side 59
+// import Exercise4NavBar from "./components/Exercise4NavBar"; // Module 07 Exercise 04 Side 59
+// import Exercise4Routes from "./routes/Exercise4Routes"; // Module 07 Exercise 04 Side 59
+// import BitcoinRates from "./pages/BitcoinRates"; // Module 07 Exercise 04 Side 59
+import PostsPage from "./pages/PostsPage";
 
 
 
@@ -57,9 +58,12 @@ function App() {
     <>
       <UserProvider>
         <MyThemeProvider>
-          <Exercise4NavBar />
-          <Exercise4Routes/>
-          {/* <AppRoutes /> */}
+          {/* <Exercise4NavBar />
+          <Exercise4Routes/> */}
+           {/* <ActivityFinder/> */}
+          <NavBar />
+          <PostsPage />
+          <AppRoutes />
         </MyThemeProvider>
       </UserProvider>
     </>
@@ -156,6 +160,12 @@ export default App;
 
 // export default App;
 //  ============================= Module 07 Exercise 05 Side 100 =============================
+
+
+
+
+
+
 
 //  ============================= ALL OF MODULE 06 IS BELOW =============================
 

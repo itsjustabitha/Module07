@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { MyThemeContext } from "../context/MyThemeContext";
+
+
 export default function NavBar() {
   const { theme } = useContext(MyThemeContext);
   return (
@@ -19,7 +21,10 @@ export default function NavBar() {
           <NavLink to="/about">About</NavLink>
         </li>
       </ul>{" "}
-      {/* ++ Add another page with route and component */}
+      {/* ++ Add another page with route and component add to NavBar.jsx so we can access our new page*/}
+      <li>
+        <NavLink to="/posts">Posts</NavLink>
+      </li>
     </nav>
   );
 }
