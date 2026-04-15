@@ -49,6 +49,7 @@ import MyThemeProvider from "./context/MyThemeContext"; // Module 07 Exercise 04
 // import Exercise4Routes from "./routes/Exercise4Routes"; // Module 07 Exercise 04 Side 59
 // import BitcoinRates from "./pages/BitcoinRates"; // Module 07 Exercise 04 Side 59
 import PostsPage from "./pages/PostsPage";
+// import ProtectedRoute from "./routes/ProtectedRoute";
 
 
 
@@ -62,7 +63,7 @@ function App() {
           <Exercise4Routes/> */}
            {/* <ActivityFinder/> */}
           <NavBar />
-          <PostsPage />
+          {/* <PostsPage /> */}
           <AppRoutes />
         </MyThemeProvider>
       </UserProvider>

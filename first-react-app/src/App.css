@@ -183,11 +183,17 @@
   }
 }
 
-.componentBox { border: 1px solid #000000; margin: 1em;
-padding: 1em; text-align: center; background:
-#cc6633; color:#000000; font-size: 1.5em; }
+.componentBox { 
+border: 1px solid #000000; 
+margin: 1em;
+padding: 1em; 
+text-align: center; 
+background: #cc6633; 
+color:#000000; 
+font-size: 1.5em; }
 
-.FancyBox { --mask: linear-gradient(#000 0 0) 50%/calc(100% - 37.00px)
+.FancyBox { 
+--mask: linear-gradient(#000 0 0) 50%/calc(100% - 37.00px)
 calc(100% - 37.00px) no-repeat,
 radial-gradient(farthest-side,#000 98%,#0000) 0 0/2em 2em round; mask:
 var(--mask); -webkit-mask: var(--mask); padding: 2em;
@@ -198,8 +204,18 @@ background: linear-gradient(135deg, #1f005c, #5b0060, #870160,
 #64018C, #6955FF, #4684FF, #1FA7FF) fixed; }
 
 /* basic NavBar CSS, add to App.css and customize as needed */
-.NavBar ul { display: flex; list-style: none; justify-content:
-center; padding: 0; }
-.NavBar ul li a { padding: 1em; color: inherit; text-transform:
-uppercase; display: inline-block; text-decoration: none; }
-.NavBar ul li a.active { font-weight: bold;}
+.NavBar ul { 
+  display: flex; 
+  list-style: none; 
+  justify-content:center; 
+padding: 0; }
+
+.NavBar ul li a { 
+  padding: 1em; 
+  color: inherit; 
+  text-transform:uppercase; 
+display: inline-block; 
+text-decoration: none; }
+
+.NavBar ul li a.active { 
+  font-weight: bold;}
