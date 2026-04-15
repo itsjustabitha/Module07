@@ -40,16 +40,21 @@
 // import Emoji from "./components/Emoji"; // Module 07 Exercise 03 Side 45 - see my EmojiContext.jsx file for this Exercise.
 // import BitcoinRates from './components/BitcoinRates' // Module 07 Exercise 02 Side 34 -  see my useData.jsx and BitcoinRates.jsx files
 // import { EmojiProvider } from "./context/EmojiContext"; // Module 07 Exercise 03 Side 45 - see my EmojiContext.jsx file for this Exercise.
-import AppRoutes from "./routes/AppRoutes"; 
-import NavBar from "./components/NavBar";
-import "./App.css";
-import { UserProvider } from "./context/UserContext"; // Module 07 Exercise 04 Side 59
-import MyThemeProvider from "./context/MyThemeContext"; // Module 07 Exercise 04 Side 59
+// import AppRoutes from "./routes/AppRoutes"; 
+// import NavBar from "./components/NavBar";
+// import "./App.css";
+// import { UserProvider } from "./context/UserContext"; // Module 07 Exercise 04 Side 59
+// import MyThemeProvider from "./context/MyThemeContext"; // Module 07 Exercise 04 Side 59
 // import Exercise4NavBar from "./components/Exercise4NavBar"; // Module 07 Exercise 04 Side 59
 // import Exercise4Routes from "./routes/Exercise4Routes"; // Module 07 Exercise 04 Side 59
 // import BitcoinRates from "./pages/BitcoinRates"; // Module 07 Exercise 04 Side 59
-import PostsPage from "./pages/PostsPage";
+// import PostsPage from "./pages/PostsPage";
 // import ProtectedRoute from "./routes/ProtectedRoute";
+import "./App.css"; // Module 07 Exercise 05 Side 100
+import MyThemeProvider from "./context/MyThemeContext"; // Module 07 Exercise 05 Side 100
+import { tealTheme } from "./context/tealTheme"; // Module 07 Exercise 05 Side 100
+import MuiNavBar from "./MuiNavBar"; // Module 07 Exercise 05 Side 100
+
 
 
 
@@ -57,16 +62,12 @@ import PostsPage from "./pages/PostsPage";
 function App() {
   return (
     <>
-      <UserProvider>
-        <MyThemeProvider>
-          {/* <Exercise4NavBar />
-          <Exercise4Routes/> */}
-           {/* <ActivityFinder/> */}
-          <NavBar />
-          {/* <PostsPage /> */}
-          <AppRoutes />
-        </MyThemeProvider>
-      </UserProvider>
+      <MyThemeProvider theme={tealTheme}>
+    <MuiNavBar />
+        <h1>My App with Teal Theme</h1>
+        <p>This app is using a custom teal theme!</p>
+      </MyThemeProvider>
+    
     </>
   );
 }
@@ -230,8 +231,17 @@ export default App;
 
 // ============================= PREVIOUS EXAMPLES - I COMMENTED THEM OUT SO I DON'T GET CONFUSED. ============================
 
-{
-  /* 
+{/* 
+     <UserProvider>
+        <MyThemeProvider>
+           <Exercise4NavBar />
+          <Exercise4Routes/> 
+            <ActivityFinder/> 
+          <NavBar />
+           <PostsPage /> 
+          <AppRoutes />
+        </MyThemeProvider>
+      </UserProvider>
   <Navbar/>
   <ActivityFinders />
 <SubscribeForm />
