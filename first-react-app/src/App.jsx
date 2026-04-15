@@ -50,10 +50,13 @@
 // import BitcoinRates from "./pages/BitcoinRates"; // Module 07 Exercise 04 Side 59
 // import PostsPage from "./pages/PostsPage";
 // import ProtectedRoute from "./routes/ProtectedRoute";
-import "./App.css"; // Module 07 Exercise 05 Side 100
+import "./App.css"; 
+import { ThemeProvider } from "@mui/material/styles";// Module 07 Exercise 05 Side 100
+import { UserProvider } from "./context/UserContext";// Module 07 Exercise 05 Side 100
 import MyThemeProvider from "./context/MyThemeContext"; // Module 07 Exercise 05 Side 100
 import { tealTheme } from "./context/tealTheme"; // Module 07 Exercise 05 Side 100
 import MuiNavBar from "./MuiNavBar"; // Module 07 Exercise 05 Side 100
+import LoginForm from "./components/LoginForm";  // Module 07 Exercise 05 Side 100
 
 
 
@@ -62,11 +65,16 @@ import MuiNavBar from "./MuiNavBar"; // Module 07 Exercise 05 Side 100
 function App() {
   return (
     <>
-      <MyThemeProvider theme={tealTheme}>
-    <MuiNavBar />
-        <h1>My App with Teal Theme</h1>
-        <p>This app is using a custom teal theme!</p>
+   {/* Module 07 Exercise 05 Side 100 */}
+    <UserProvider> 
+      <MyThemeProvider> 
+        <ThemeProvider theme={tealTheme}> 
+          <MuiNavBar /> 
+          <LoginForm /> 
+          <h1>Hey, this is exercise 05!</h1>
+        </ThemeProvider>
       </MyThemeProvider>
+    </UserProvider>
     
     </>
   );
